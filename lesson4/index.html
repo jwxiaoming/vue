@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>点击事件</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="myapp">
+		<h3>你选择的游戏是 {{game}}</h3>
+		<button @click="btnClick('我的世界')">我的世界</button>
+		<button @click="btnClick('机甲世纪')">机甲世纪</button>
+	</div>
+	<script>
+		var myapp = new Vue({
+			el: '#myapp',
+			data: {
+				game: '待选择'
+			},
+			methods: {
+				btnClick: function(pname){
+					this.game = pname;
+				},
+			},
+		})
+	</script>
+
+</body>
+</html>

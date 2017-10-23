@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>循环</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="myApp">
+		<h3>游戏列表</h3>
+		<div v-if="seen">2017最新售卖</div>
+		<ol>
+			<li v-for="game in games">{{game.title}} / {{game.price}}</li>
+		</ol>
+	</div>
+	<script>
+		var myapp = new Vue({
+			el: "#myApp",
+			data: {
+				seen: true,
+				games: [
+					{title:"龙骑士之怒",price:399},
+					{title:"机器猫之旅",price:499},
+					{title:"闪电侠之大战蝙蝠侠",price:998}
+				],
+			},
+		});
+	</script>
+</body>
+</html>
