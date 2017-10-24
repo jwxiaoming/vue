@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤器</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>    
+</head>
+<body>
+    <div id="myapp">
+        <p>{{message}}</p>
+        <p>{{message | daxie}}</p>
+        <hr>
+        <p>现在的学习进度是{{num | baifenbi}}</p>
+    </div>
+    
+
+    <script>
+        var myapp = new Vue({
+            el:'#myapp',
+            data:{
+                message:'hello,vue.js!',
+                num:0.3
+            },
+            filters:{
+                daxie: function(value){
+                    return value.toUpperCase();
+                },
+                baifenbi: function(value){
+                    return value * 100 + '%';
+                },
+            },
+        });
+    </script>
+</body>
+</html>
