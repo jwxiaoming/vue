@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>观察属性</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <p>游戏机的价格为{{price}}日元，含税价格为{{hanshui}}日元，折合人民币为{{renmingbi}}元</p>
+        <button @click="btnClick(10000)">加价10000日元</button>
+    </div>
+    <script>
+        var myapp = new Vue({
+            el:'#myapp',
+            data:{
+                price:0,
+                hanshui:0,
+                renmingbi:0
+            },
+            watch:{
+                price:function(newVal,oldVal){
+                    console.log(newVal,oldVal);
+                    this.hanshui = Math.round(this.price * 1.08);
+                    this.renmingbi = Math.round(this.hanshui / 16.75);
+                },
+            },
+            methods:{
+                btnClick:function(addPrice){
+                    this.price += addPrice;
+                },
+            },
+        });
+        myapp.price = 19800;
+    </script>
+</body>
+</html>
