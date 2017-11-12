@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表循环</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <ul>
+            <li v-for="(game,index) in games">{{index+1}}、{{game.title}}的售价是{{game.price}}</li>
+        </ul>
+    </div>
+    <script>
+        var myapp = new Vue({
+            el:"#myapp",
+            data:{
+                games:[
+                    {title:'勇者斗恶龙',price:400},
+                    {title:'超级马里奥',price:500},
+                    {title:'荒野行动',price:600},
+                ],
+            },
+        })
+    </script>
+</body>
+</html>
