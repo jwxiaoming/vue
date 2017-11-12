@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单选框数据绑定</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <h1>请选择性别:</h1>
+        <input type="radio" id="man" value="男" v-model="pickedSex">
+        <label for="man">男</label>
+        <br>
+        <input type="radio" id="woman" value="女" v-model="pickedSex">
+        <label for="woman">女</label>
+        <br>
+        <h1>你选择的性别是:{{pickedSex}}</h1>
+    </div>
+    <script>
+        var myapp = new Vue({
+            el:"#myapp",
+            data:{
+                pickedSex: "",
+            },
+        })
+    </script>
+</body>
+</html>
