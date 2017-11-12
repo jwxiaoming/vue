@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单复选框绑定</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <input type="checkbox" id="生化危机8" value="生化危机8" v-model="checkbox">
+        <label for="生化危机8">生化危机8</label>
+        <input type="checkbox" id="跑跑卡丁车" value="跑跑卡丁车" v-model="checkbox">
+        <label for="跑跑卡丁车">跑跑卡丁车</label>
+        <h1>您选择的是：{{checkbox}}</h1>
+    </div>
+    <script>
+        var myapp = new Vue({
+            el:"#myapp",
+            data:{
+                checkbox:[],
+            }
+        })
+    </script>
+</body>
+</html>
