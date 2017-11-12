@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素显示</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <h1 v-show="result">任天堂新一代主机发售了</h1>
+        <button @click="btnClick">{{message}}</button>
+    </div>
+    <script>
+        var myapp = new Vue({
+            el:'#myapp',
+            data:{
+                result:true,
+                message:'按钮',
+            },
+            methods:{
+                btnClick:function(){
+                    this.result = !this.result;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
