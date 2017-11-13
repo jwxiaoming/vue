@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉框数据绑定</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <h3>你喜欢的食物是：</h3>
+        <select v-model="likefood">
+            <option>汉堡</option>
+            <option>蒸饺</option>
+        </select>
+        <h3>你喜欢的肯德基套餐是：</h3>
+        <select v-model="kfcfoods" multiple>
+            <option>全家桶</option>
+            <option>香辣鸡翅</option>
+            <option>蛋挞</option>
+        </select>
+        <h3>你选择的食物是:{{likefood}}</h3>
+        <h3>你喜欢的肯德基套餐是:{{kfcfoods}}</h3>
+    </div>
+
+    
+    <script>
+        var myapp = new Vue({
+            el:"#myapp",
+            data:{
+                likefood:null,
+                kfcfoods:[],
+            }
+        })
+    </script>
+</body>
+</html>
