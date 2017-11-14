@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单修饰符</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <input v-model.lazy="username">
+        <p>你的用户名是:{{username}}</p>
+        <br>
+        <input v-model.number="age">
+        <p>你的年龄是:{{age}}</p>
+        <br>
+        <textarea v-model.trim="content" cols="30" rows="10"></textarea>
+        <p>你输入的信息{{content}}</p>
+    </div>
+    <script>
+        var myapp = new Vue({
+            el:"#myapp",
+            data:{
+                username:"",
+                age:0,
+                content:'',
+            }
+        })
+    </script>
+</body>
+</html>
