@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表行组件</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <table border="1px">
+            <tr>
+                <td>编号</td>
+                <td>游戏名称</td>
+            </tr>
+            <tr is="row1"></tr>
+            <tr is="row2"></tr>
+            <tr is="row3"></tr>
+            <!-- <row1></row1>
+            <row2></row2>
+            <row3></row3> -->
+        </table>
+    </div>
+    <script>
+    Vue.component('row1',{
+        template:'<tr><td>(1)</td><td>马里奥传说</td></tr>'
+    });
+    Vue.component('row2',{
+        template:'<tr><td>(2)</td><td>乌贼娘传奇2</td></tr>'
+    });
+    Vue.component('row3',{
+        template:'<tr><td>(3)</td><td>勇者斗恶龙</td></tr>'
+    });
+    var myapp = new Vue({
+        el:"#myapp",
+        data:{
+
+        },
+        methods:{
+
+        },
+    });
+    </script>
+</body>
+</html>
