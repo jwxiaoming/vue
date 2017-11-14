@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件的局部注册</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <today-weather></today-weather>
+    </div>
+    <script>
+        var tianqi = {
+            template:"<li>今天天气真好</li>"
+        };
+        var myapp = new Vue({
+            el:'#myapp',
+            data:{
+
+            },
+            components:{
+                'today-weather':tianqi
+            }
+        })
+    </script>
+</body>
+</html>
