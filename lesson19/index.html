@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>components</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <today-weather></today-weather>
+    </div>
+    <script>
+        Vue.component('today-weather',{
+            template:'<li>今天下雨，在家看电影吧</li>'
+        });
+        var myapp = new Vue({
+            el:"#myapp",
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>
