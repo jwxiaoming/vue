@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性传值</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <p>成绩查询</p>
+        <chengji :fenshu="45"></chengji>
+        <chengji :fenshu="61"></chengji>
+        <chengji :fenshu="81"></chengji>
+        <chengji :fenshu="100"></chengji>
+    </div>
+    <script>
+        Vue.component("chengji",{
+            props:['fenshu'],
+            template:'<div><strong>分数：{{fenshu}}，{{daoyu}}</strong></div>',
+            computed:{
+                daoyu:function(){
+                    var daoyu = '';
+                    if (this.fenshu<60)
+                        daoyu="不及格，请努力";
+                    else if (this.fenshu<80)
+                        daoyu="不错，请继续努力";
+                    else if (this.fenshu<=100)
+                        daoyu='牛逼';
+                    return daoyu;
+                }
+            }
+        })
+        var myapp = new Vue({
+            el:'#myapp',
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>
