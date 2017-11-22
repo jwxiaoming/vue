@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>slot组合</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <p>jinnuo的员工：</p>
+        <jinnuo a='犬少' b='明仔'>
+            <span slot="d">设计师：</span>
+            <span slot="e">文案：</span>
+        </jinnuo>
+    </div>
+    <script>
+        Vue.component('jinnuo',{
+            props:['a','b'],
+            template:'<div>'
+            +'<div>程序员：{{a}}，{{b}}</div>'
+            +'<div><slot name="d"></slot>小小草、邓猪脚</div>'
+            +'<div><slot name="e"></slot>雷舒、杨乐、林颖、韩烧白</div>'
+            +'</div>',
+        });
+        var myapp = new Vue({
+            el:'#myapp',
+        })
+    </script>
+</body>
+</html>
