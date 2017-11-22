@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>slot插槽</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <say-hello pname='jiji'>
+            英雄！
+        </say-hello>
+    </div>
+    <script>
+        Vue.component("say-hello",{
+            props:['pname'],
+            template:'<div>'
+            +'<p>欢迎回来<strong>{{pname}}</strong><slot></slot></p>'
+            +'<slot></slot>'
+            +'</div>',
+        });
+        var myapp = new Vue({
+            el:'#myapp',
+        })
+    </script>
+</body>
+</html>
